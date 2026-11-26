@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 Dopamine competition entry.
-Outputs the competition name to /output/entry.txt
+Outputs the competition name to entry.txt in MAKEFUN_OUTPUT_DIR
 """
 import os
 
-# Create output directory if it doesn't exist
-output_dir = "/output"
+# Use MAKEFUN_OUTPUT_DIR environment variable for output
+output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "./output")
 os.makedirs(output_dir, exist_ok=True)
 
 # Write entry name to output file
